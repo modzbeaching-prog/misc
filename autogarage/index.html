@@ -25,6 +25,7 @@
    azul petroleo, un solo faro frio.
    ============================================================ */
 :root{
+  color-scheme:dark;
   --canvas:#0A131B;
   --canvas-deep:#070E14;
   --panel:#101C25;
@@ -129,6 +130,7 @@ p{margin:0}
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:16px var(--gut);
+  padding-top:calc(16px + env(safe-area-inset-top,0px));
   transition:background-color .6s var(--ease-soft),border-color .6s var(--ease-soft),backdrop-filter .6s var(--ease-soft);
   border-bottom:1px solid transparent;
 }
@@ -151,7 +153,7 @@ p{margin:0}
 .navlinks a.btn::after{display:none}
 @media (max-width:860px){.navlinks a:not(.btn){display:none}}
 @media (max-width:560px){
-  .nav{padding:12px var(--gut)}
+  .nav{padding:12px var(--gut);padding-top:calc(12px + env(safe-area-inset-top,0px))}
   .brand .bwrap span{display:none}
   .brand svg{width:26px;height:26px}
   .brand b{font-size:.98rem}
@@ -237,7 +239,7 @@ p{margin:0}
 
 /* --- HUD del heroe --- */
 .hud{
-  position:absolute;left:var(--gut);bottom:26px;z-index:4;
+  position:absolute;left:var(--gut);bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:4;
   display:flex;align-items:center;gap:12px;
   font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--text-secondary);
   padding:9px 14px;border-radius:10px;
@@ -248,7 +250,7 @@ p{margin:0}
 .hud .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
 .hud .pct{color:var(--text-primary);min-width:4ch;display:inline-block;text-align:right}
 .cue{
-  position:absolute;right:var(--gut);bottom:26px;z-index:4;
+  position:absolute;right:var(--gut);bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:4;
   display:flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);
   text-shadow:0 1px 3px rgba(5,5,10,.85);transition:opacity .7s var(--ease-soft);
